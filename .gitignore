@@ -1,0 +1,4 @@
+*.swp
+*.swo
+/gnunet/__pycache__
+

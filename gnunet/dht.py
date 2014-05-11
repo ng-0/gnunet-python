@@ -51,6 +51,19 @@ class GetRequest:
     self.callback = callback
     self.record_route = record_route
 
+  def filter_known_results(self, keys):
+    keys = dbus.Array([dbusize(HashCode(key)) for key in list(keys)], signature="v")
+    try:
+      sysbus.get_object("gnu.gnunet.dht", self._path).filter_known_results(keys, dbus_interface="gnu.gnunet.dht.get")
+    except dbus.DBusException as e:
+      handle_exception(e, "dht", "gnu.gnunet.dht")
+
+  def stop(self):
+    try:
+      sysbus.get_object("gnu.gnunet.dht", self._path).stop(dbus_interface="gnu.gnunet.dht.get")
+    except dbus.DBusException as e:
+      handle_exception(e, "dht", "gnu.gnunet.dht")
+
 def put(key, desired_replication_level, block_type, data, expiry=None, demultiplex_everywhere=False, record_route=False, bart=False):
   key = dbusize(HashCode(key), True)
   desired_replication_level = dbus.UInt32(desired_replication_level)

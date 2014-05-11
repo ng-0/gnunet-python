@@ -16,7 +16,9 @@ def result_callback(block_type, key, data, expiry, get_path, put_path):
   print("  put_path   == %s" % repr(put_path))
   print("  data       == %s" % repr(data))
 
-gnunet.dht.get_start(result_callback, "test", key, 1, record_route=True)
+req = gnunet.dht.get_start(result_callback, "test", key, 1, record_route=True)
+req.filter_known_results([])
+req.stop()
 
 time.sleep(1)
 

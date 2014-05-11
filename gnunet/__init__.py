@@ -6,7 +6,7 @@ class GNUNetDaemonError(Exception):
 class _Key:
   def __init__(self, arg, subtype, bits):
     if isinstance(arg, subtype):
-      self._data = arg.data
+      self._data = arg._data
     elif isinstance(arg, str):
       self._data = strings.string_to_data(arg)
     else:
