@@ -13,4 +13,3 @@ types = set([
     "gns_namerecord",
     "regex",
     "regex_accept"])
-
