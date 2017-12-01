@@ -7,18 +7,19 @@ key = gnunet.HashCode("RMKN0U1JNA3PVCL148D6JI0STVG94A8A65INOK849CF1RT6BGF26AMMT1
 
 gnunet.dht.put(key, 1, "test", b"hello")
 
+
 def result_callback(block_type, key, data, expiry, get_path, put_path):
-  print("Got result from DHT")
-  print("  block_type == %s" % repr(block_type))
-  print("  key        == %s" % repr(key))
-  print("  expiry     == %s" % repr(expiry))
-  print("  get_path   == %s" % repr(get_path))
-  print("  put_path   == %s" % repr(put_path))
-  print("  data       == %s" % repr(data))
+    print("Got result from DHT")
+    print("  block_type == %s" % repr(block_type))
+    print("  key        == %s" % repr(key))
+    print("  expiry     == %s" % repr(expiry))
+    print("  get_path   == %s" % repr(get_path))
+    print("  put_path   == %s" % repr(put_path))
+    print("  data       == %s" % repr(data))
+
 
 req = gnunet.dht.get_start(result_callback, "test", key, 1, record_route=True)
 req.filter_known_results([])
 req.stop()
 
 time.sleep(1)
-
