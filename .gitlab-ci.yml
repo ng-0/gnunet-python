@@ -1,0 +1,31 @@
+variables:
+
+stages:
+  - container
+  - build
+
+build-container:
+  stage: container
+  image: docker:dind
+  only:
+    - master
+  script:
+    - docker build -f Dockerfile -t gnunet-python .
+
+# For now just build with python3
+language: python
+python:
+    - "3.6"
+    - "2.7"
+
+build-gnunet-python:
+  stage: build
+  image: gnunet-python:latest
+  only:
+    - master
+  install:
+    - pip install dbus
+    - pip install PyGObject
+script: python setup.py
+
+cache: pip
