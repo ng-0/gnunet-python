@@ -13,10 +13,10 @@ build-container:
     - docker build -f Dockerfile -t gnunet-python .
 
 # For now just build with python3
-language: python
-python:
-    - "3.6"
-    - "2.7"
+# language: python
+# python:
+#    - "3.6"
+#    - "2.7"
 
 build-gnunet-python:
   stage: build
