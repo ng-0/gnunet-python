@@ -1,3 +1,5 @@
+from gnunet import _Key, GNUNetDaemonError
+import gnunet.strings as strings
 import dbus
 import threading
 import datetime
@@ -7,9 +9,6 @@ from dbus.mainloop.glib import DBusGMainLoop, threads_init
 threads_init()
 DBusGMainLoop(set_as_default=True)
 sysbus = dbus.SystemBus()
-
-from gnunet import _Key, GNUNetDaemonError
-import gnunet.strings as strings
 
 
 class MainLoop(threading.Thread):

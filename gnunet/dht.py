@@ -108,7 +108,7 @@ def get_start(callback, block_type, key, desired_replication_level, demultiplex_
         options += ["record_route"]
     if bart:
         options += ["bart"]
-  
+
     ret = None
     try:
         with requests_lock:
