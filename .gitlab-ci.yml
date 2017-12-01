@@ -27,5 +27,3 @@ build-gnunet-python:
     - pip install dbus
     - pip install PyGObject
 script: python setup.py
-
-cache: pip
