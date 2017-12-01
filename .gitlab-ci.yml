@@ -23,4 +23,8 @@ build-gnunet-python:
   image: gnunet-python:latest
   only:
     - master
+  before_script:
+    - apt install python3-pip
+    - pip3 install dbus
+    - pip3 install PyGObject
   script: python setup.py
