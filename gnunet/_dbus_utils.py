@@ -41,7 +41,7 @@ def dbusize(arg, pretty):
             return dbus.Array(arg._data[:], variant_level=1, signature="y")
 
         # if type(arg) is gnsrecord.Data:
-        # return dbus.Struct([arg._recordtype, 
+        # return dbus.Struct([arg._recordtype,
 
     if isinstance(arg, datetime.datetime):
         if pretty:
