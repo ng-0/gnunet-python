@@ -25,4 +25,4 @@ build-gnunet-python:
     - master
   before_script:
     - apt-get install -y python3-pip python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0 python-dbus
-  script: python setup.py
+  script: python3 setup.py
