@@ -9,7 +9,9 @@ setup(
     version="0.0",
 
     packages=['gnunet'],
-    install_requires=['dbus', 'PyGObject'],
+    install_requires=['dbus-python'],
+    # We require PyGObject (pygobject) but would have to
+    # pass a URL to pip3 for that, as it is not on pypi.
 
     # Maybe this should just be GNUnet eV.
     author="ng0",
