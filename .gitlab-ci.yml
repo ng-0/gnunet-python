@@ -24,4 +24,4 @@ build-gnunet-python:
   only:
     - master
   script:
-    - pip3 install --verbose .
+    - pip3 install --no-deps --verbose .
