@@ -30,7 +30,7 @@ def pythonize(arg, argtype):
             return strings.string_to_absolute_time(arg)
         if isinstance(arg. dbus.UInt64):
             return datetime.datetime(1970, 1, 1) + datetime.timedelta(microseconds=arg)
-        return datatime.datetime(arg)
+        return datetime.datetime(arg)
 
 
 def dbusize(arg, pretty):
