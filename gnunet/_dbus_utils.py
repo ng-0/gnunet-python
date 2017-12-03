@@ -3,6 +3,8 @@ import gnunet.strings as strings
 import dbus
 import threading
 import datetime
+import gi
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
 from dbus.mainloop.glib import DBusGMainLoop, threads_init
