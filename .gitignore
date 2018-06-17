@@ -1,4 +1,8 @@
 *.swp
 *.swo
 /gnunet/__pycache__
-
+flake8.log
+*.pyc
+*.egg
+*~
+\#*\#
