@@ -6,7 +6,7 @@ except ImportError:
 
 setup(
     name="gnunet",
-    version="0.0",
+    version="0.11",
 
     packages = find_packages(),
     # install_requires=['dbus-python'],
